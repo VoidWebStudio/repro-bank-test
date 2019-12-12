@@ -1,0 +1,89 @@
+@import 'mixins';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar-brand{
+  img{   
+        @include respond(phone) {
+        
+          width: 25rem;
+        }
+        
+   
+  }
+
+}
+
+.header-logo {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 2.6rem 0;
+
+  @include respond(tab-extra) {
+      
+    display: none;
+  }
+
+
+
+  .header-logo__number {
+    a {
+      color: #004861;
+      font-family: "Segoe UI Regular", sans-serif;
+      font-size: 4.8rem;
+      font-weight: bold;
+      line-height: 5.5rem;
+      text-decoration: none;
+
+    }
+
+  }
+
+
+  .header-logo__pay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background-color: #005f84;
+      border-radius: 1rem;
+
+      span {
+        color: #ffffff;
+        font-family: "Segoe UI Regular", sans-serif;
+        font-size: 2.2rem;
+        font-weight: bold;
+        line-height: 5.5rem;
+        letter-spacing: -0.44px;
+        display: block;
+        padding: 0 0 0 2.3rem;
+      }
+
+      i {
+        color: #ffffff;
+        padding-left: 1.5rem;
+        padding-right: 2.6rem;
+        padding-top: .4rem;
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: 'Segoe UI Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Segoe UI Regular'), url('../fonts/Segoe UI.woff') format('woff');
+}
