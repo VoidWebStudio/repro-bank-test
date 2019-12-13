@@ -75,6 +75,10 @@ $font-family: 'Open Sans', sans-serif;
     align-items: center;
     flex-direction: column;
     padding-bottom: 13rem;
+    @include respond(phone) {
+      padding-bottom: 5rem;
+      
+        }
     h1{
       color: #006085;
       font-family: $font-family;

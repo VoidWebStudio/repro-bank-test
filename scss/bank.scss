@@ -88,6 +88,10 @@ $font-family: 'Open Sans', sans-serif;
             line-height: 2.8rem;
             padding-top: 1.3rem;
             margin: 0;
+            width: 60%;
+            @include respond(phone) {
+             width: 100%;
+          }
           }
 
           .inside-list{
@@ -104,6 +108,10 @@ $font-family: 'Open Sans', sans-serif;
               line-height: 2.8rem;
               padding-bottom: 2.5rem;
               margin: 0;
+              width: 60%;
+              @include respond(phone) {
+                width: 100%;
+             }
             }
           }
         }

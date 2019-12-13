@@ -180,6 +180,8 @@ $font-family: 'Open Sans', sans-serif;
       align-items: center;
       @include respond(phone) {
         float: left;
+        display: none;
+        
     }
 
       .arrow-top-link{
