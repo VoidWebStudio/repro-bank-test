@@ -126,6 +126,9 @@
       font-weight: 400;
       line-height: 2.8rem; }
 
+.answer-container .rotate {
+  margin-left: 1rem; }
+
 @-webkit-keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);
@@ -146,11 +149,35 @@
     transform: scale(1);
     opacity: 1; } }
 
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 .container-bank {
   background-image: url("../img/bg-bank.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
+  @media only screen and (max-width: 60.25em) {
+    .container-bank {
+      background-size: auto;
+      background-position: center; } }
+  @media only screen and (max-width: 43.75em) {
+    .container-bank {
+      background-position: top; } }
   .container-bank .container-main-bank .bank-first {
     padding-top: 216px; }
     .container-bank .container-main-bank .bank-first h1 {
@@ -179,7 +206,7 @@
     line-height: 3.6rem;
     padding-bottom: 3rem; }
   .container-bank .container-main-bank .bank-info ul {
-    width: 57%;
+    width: 100%;
     padding-left: 2rem; }
     .container-bank .container-main-bank .bank-info ul li {
       display: -webkit-box;
@@ -242,6 +269,10 @@
     border: .2rem solid #006292;
     text-decoration: none;
     margin-left: 8rem; }
+    @media only screen and (max-width: 43.75em) {
+      .container-bank .container-main-bank .bank-info a {
+        padding: 1.1rem 1rem;
+        margin-left: 4rem; } }
     .container-bank .container-main-bank .bank-info a span {
       color: #006085;
       font-family: "Open Sans", sans-serif;
@@ -269,6 +300,9 @@
     flex-direction: column;
     padding-top: 6rem;
     padding-bottom: 12.5rem; }
+    @media only screen and (max-width: 43.75em) {
+      .container-bank .container-main-bank .bank-save {
+        padding: 3rem; } }
     .container-bank .container-main-bank .bank-save .bank-save-header {
       display: -webkit-box;
       display: -webkit-flex;
@@ -297,9 +331,77 @@
       -webkit-box-align: center;
       -webkit-align-items: center;
       align-items: center; }
+      @media only screen and (max-width: 60.25em) {
+        .container-bank .container-main-bank .bank-save .bank-save-content {
+          display: none; } }
       .container-bank .container-main-bank .bank-save .bank-save-content img {
         max-width: 130rem;
         width: 100%; }
+
+.bank {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  display: none; }
+  @media only screen and (max-width: 60.25em) {
+    .bank {
+      display: block; } }
+  .bank .bank-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+  .bank .bank-text {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+    @media only screen and (max-width: 43.75em) {
+      .bank .bank-text {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        flex-direction: column; } }
+    .bank .bank-text .img-div {
+      -o-object-fit: contain;
+      object-fit: contain; }
+      .bank .bank-text .img-div img {
+        width: 100%;
+        height: 100%; }
+    .bank .bank-text span {
+      margin-left: 2.5rem; }
+    .bank .bank-text h1 {
+      color: #006085;
+      font-family: "Open Sans", sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      line-height: 3.2rem;
+      text-align: center; }
+      @media only screen and (max-width: 43.75em) {
+        .bank .bank-text h1 {
+          font-size: 2rem !important; } }
+    .bank .bank-text p {
+      color: #000000;
+      font-family: "Open Sans", sans-serif;
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 3.2rem;
+      text-align: center;
+      padding-bottom: 2.4rem; }
+      @media only screen and (max-width: 43.75em) {
+        .bank .bank-text p {
+          font-size: 1.6rem; } }
 
 /*
 0 - 600px:      Phone
@@ -323,10 +425,10 @@ html {
   font-size: 62.5%; }
   @media only screen and (max-width: 43.75em) {
     html {
-      font-size: 40%; } }
+      font-size: 38%; } }
   @media only screen and (max-width: 60.25em) {
     html {
-      font-size: 50%; } }
+      font-size: 45%; } }
   @media only screen and (max-width: 61.95em) {
     html {
       font-size: 56.25%; } }
@@ -336,6 +438,8 @@ html {
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
+  html p {
+    font-size: 1.5rem; }
 
 /*
   
@@ -357,6 +461,23 @@ html {
 }
 */
 
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 .container-doc {
   background-image: url("../img/bg-doc.png");
   background-size: cover;
@@ -383,6 +504,9 @@ html {
       line-height: 3.6rem;
       max-width: 53%;
       text-align: center; }
+      @media only screen and (max-width: 43.75em) {
+        .container-doc .doc-main h1 {
+          max-width: 100%; } }
     .container-doc .doc-main p {
       color: #000000;
       font-family: "Open Sans", sans-serif;
@@ -393,6 +517,9 @@ html {
       line-height: 3.2rem;
       padding-top: 2rem;
       padding-bottom: 2.6rem; }
+      @media only screen and (max-width: 43.75em) {
+        .container-doc .doc-main p {
+          max-width: 100%; } }
     .container-doc .doc-main .doc-info {
       display: -webkit-box;
       display: -webkit-flex;
@@ -409,6 +536,9 @@ html {
       align-items: center;
       width: 100%;
       padding-bottom: 8.9rem; }
+      @media only screen and (max-width: 43.75em) {
+        .container-doc .doc-main .doc-info {
+          padding: 0; } }
       .container-doc .doc-main .doc-info h1 {
         color: #005f84;
         font-family: "Open Sans", sans-serif;
@@ -453,6 +583,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
   margin-top: -10%;
   position: relative;
   z-index: 1; }
+  @media only screen and (max-width: 43.75em) {
+    .container-factors {
+      display: none; } }
   .container-factors .container-main-factors .factors-header {
     display: -webkit-box;
     display: -webkit-flex;
@@ -512,6 +645,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
       font-weight: 400;
       line-height: 3.2rem;
       text-align: center; }
+      @media only screen and (max-width: 20.1em) {
+        .container-factors .container-main-factors .factors-modern h1 {
+          text-align: left !important; } }
     .container-factors .container-main-factors .factors-modern p {
       color: #000000;
       font-family: "Open Sans", sans-serif;
@@ -548,7 +684,24 @@ ORDER: Base + typography > general layout + grid > page layout > components
         padding-left: 1.2rem;
         padding-top: .5rem; }
 
-.box {
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+.box2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -556,13 +709,139 @@ ORDER: Base + typography > general layout + grid > page layout > components
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   flex-direction: column;
-  background: red; }
+  width: 100%;
+  margin-top: 3rem; }
+  .box2 .icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+  .box2 .icons {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+    .box2 .icons img {
+      width: 7rem;
+      height: 7rem;
+      -o-object-fit: contain;
+      object-fit: contain;
+      margin-right: 2rem; }
+    .box2 .icons span {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      padding: 2rem;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center; }
+    .box2 .icons p {
+      font-size: 1.6rem;
+      color: #006085; }
+    .box2 .icons i {
+      font-size: 50px;
+      color: #005c80; }
 
-.icons {
+.factors-header {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  width: 100%; }
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding-top: 20rem;
+  padding-bottom: 4.9rem; }
+  @media only screen and (max-width: 43.75em) {
+    .factors-header {
+      padding-top: 0;
+      padding-bottom: 0; } }
+  .factors-header h1 {
+    color: #005c80;
+    font-family: "Open Sans", sans-serif;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 3.6rem;
+    text-align: center; }
+
+.container-factors2 {
+  display: none; }
+  @media only screen and (max-width: 43.75em) {
+    .container-factors2 {
+      display: block; } }
+
+.factors-modern {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 13rem; }
+  .factors-modern h1 {
+    color: #006085;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+    text-align: center; }
+    @media only screen and (max-width: 20.1em) {
+      .factors-modern h1 {
+        text-align: left !important; } }
+  .factors-modern p {
+    color: #000000;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+    text-align: center;
+    padding-bottom: 2.4rem; }
+  .factors-modern a {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 0 5.1rem 0 3.1rem;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: .2rem solid #006292;
+    text-decoration: none; }
+    .factors-modern a span {
+      color: #006085;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 5.2rem; }
+    .factors-modern a i {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #006085;
+      padding-left: 1.2rem;
+      padding-top: .5rem; }
+
+.icon {
+  margin: 0 auto;
+  margin-bottom: 3rem; }
 
 .container-fix {
   position: relative;
@@ -677,6 +956,23 @@ ORDER: Base + typography > general layout + grid > page layout > components
         padding-left: 1.6rem;
         padding-right: 2.2rem; }
 
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 .container-footer {
   background-color: #00587f; }
   .container-footer .footer-last {
@@ -698,12 +994,21 @@ ORDER: Base + typography > general layout + grid > page layout > components
     color: #9bb4c3;
     padding-top: 4rem;
     padding-bottom: 4rem; }
+    @media only screen and (max-width: 43.75em) {
+      .container-footer .footer-last {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        flex-direction: column; } }
     .container-footer .footer-last span {
       color: #fff;
       font-family: "Open Sans", sans-serif;
       font-size: 1.4rem;
       font-weight: 700;
       line-height: 3.2rem; }
+      @media only screen and (max-width: 20.1em) {
+        .container-footer .footer-last span {
+          font-size: 1.2rem; } }
     .container-footer .footer-last .footer-contact-info {
       display: -webkit-box;
       display: -webkit-flex;
@@ -922,15 +1227,42 @@ ORDER: Base + typography > general layout + grid > page layout > components
       -webkit-box-align: center;
       -webkit-align-items: center;
       align-items: center; }
+      @media only screen and (max-width: 43.75em) {
+        .container-footer .footer-last .footer-last__tree {
+          float: left; } }
       .container-footer .footer-last .footer-last__tree .arrow-top-link {
-        padding-bottom: 6rem; }
+        padding-bottom: 6rem;
+        float: right; }
     .container-footer .footer-last .footer-last_date {
       color: #347796; }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+.main-link {
+  display: none; }
 
 .container-freeze {
   background-image: url("../img/bg-kid.png");
   background-size: contain;
   background-repeat: no-repeat; }
+  @media only screen and (max-width: 60.25em) {
+    .container-freeze {
+      background-image: none; } }
   .container-freeze .container-main {
     display: -webkit-box;
     display: -webkit-flex;
@@ -995,6 +1327,12 @@ ORDER: Base + typography > general layout + grid > page layout > components
         background-color: #ffffff;
         width: 100%;
         padding: 3.1rem 0; }
+        @media only screen and (max-width: 43.75em) {
+          .container-freeze .container-main .freeze-main .freeze-info {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column; } }
         .container-freeze .container-main .freeze-main .freeze-info .text-block-img {
           display: -webkit-box;
           display: -webkit-flex;
@@ -1064,6 +1402,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
         -webkit-align-items: center;
         align-items: center;
         padding-top: 3rem; }
+        @media only screen and (max-width: 43.75em) {
+          .container-freeze .container-main .freeze-main .freeze-list {
+            margin-left: 2rem; } }
         .container-freeze .container-main .freeze-main .freeze-list ul {
           display: -webkit-box;
           display: -webkit-flex;
@@ -1083,6 +1424,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
         border-radius: .4rem;
         border: .2rem solid #006292;
         text-decoration: none; }
+        @media only screen and (max-width: 43.75em) {
+          .container-freeze .container-main .freeze-main .freeze-consultation a {
+            padding: 1rem; } }
         .container-freeze .container-main .freeze-main .freeze-consultation a span {
           color: #006085;
           font-family: "Open Sans", sans-serif;
@@ -1117,6 +1461,17 @@ ORDER: Base + typography > general layout + grid > page layout > components
   margin: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+  @media only screen and (max-width: 43.75em) {
+    * .col-lg-12 {
+      padding: 0 !important; }
+    * h1 {
+      text-align: left !important;
+      font-size: 2.5rem !important; }
+    * p {
+      text-align: left !important; }
+    * ul {
+      width: 100% !important;
+      padding: 0 !important; } }
 
 @media only screen and (max-width: 43.75em) {
   .navbar-brand img {
@@ -1185,6 +1540,16 @@ ORDER: Base + typography > general layout + grid > page layout > components
   font-style: normal;
   font-weight: normal;
   src: local("Segoe UI Regular"), url("../fonts/Segoe UI.woff") format("woff"); }
+
+.navbar-toggler {
+  border: none !important; }
+
+.blue {
+  color: #005f84 !important;
+  font-size: 3rem !important; }
+
+button:focus {
+  outline-color: #005f84 !important; }
 
 /*
 0 - 600px:      Phone
@@ -1304,7 +1669,14 @@ ORDER: Base + typography > general layout + grid > page layout > components
   flex-direction: row;
   width: 100%;
   -webkit-justify-content: space-around;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-top: 3rem; }
+
+.header-logo__logo2 {
+  display: none; }
+  @media only screen and (max-width: 70.25em) {
+    .header-logo__logo2 {
+      display: block; } }
 
 /*
 0 - 600px:      Phone
@@ -1386,7 +1758,6 @@ ORDER: Base + typography > general layout + grid > page layout > components
   background-color: #eaf5f6 !important;
   -webkit-box-shadow: 0.3rem 0.4rem 1.6rem rgba(0, 0, 0, 0.17);
   box-shadow: 0.3rem 0.4rem 1.6rem rgba(0, 0, 0, 0.17);
-  padding: 3.2rem 1.7rem 2.4rem 2rem !important;
   -webkit-border-radius: 10px;
   border-radius: 10px; }
 
@@ -1504,7 +1875,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
     border-radius: 1rem;
     background-color: #ebf6f7;
     padding: 2.3rem 3.9rem 2rem 2.2rem;
-    width: 60%; }
+    width: 100%; }
     .container-main-plans .plans-link a {
       color: #006085;
       font-family: "Open Sans", sans-serif;
@@ -1526,62 +1897,67 @@ ORDER: Base + typography > general layout + grid > page layout > components
         color: #006085;
         font-family: "Open Sans", sans-serif;
         font-weight: 700; }
-  .container-main-plans .plan-image {
+  .container-main-plans .plan-image .plan-first-info {
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    flex-direction: column; }
-    .container-main-plans .plan-image .plan-image-first {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: flex;
-      position: relative;
-      z-index: 9999;
-      -webkit-box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
-      box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
-      -webkit-border-radius: 2rem;
-      border-radius: 2rem;
-      background-color: #ffffff;
-      width: 70%;
-      padding: 3.2rem 4rem; }
-      @media only screen and (max-width: 61.95em) {
-        .container-main-plans .plan-image .plan-image-first {
-          width: 100% !important; } }
-      .container-main-plans .plan-image .plan-image-first .plan-info {
-        padding-left: 5.7rem; }
-        .container-main-plans .plan-image .plan-image-first .plan-info .plan-info-txt {
-          padding-top: 2.4rem;
-          max-width: 24.2rem; }
-        .container-main-plans .plan-image .plan-image-first .plan-info .plan-info-line .plan-info-line-text {
-          width: 47%;
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: flex;
-          -webkit-box-pack: justify;
-          -webkit-justify-content: space-between;
-          justify-content: space-between; }
-          .container-main-plans .plan-image .plan-image-first .plan-info .plan-info-line .plan-info-line-text p {
-            color: #000000;
-            font-family: "Open Sans", sans-serif;
-            font-size: 1.2rem;
-            font-weight: 400;
-            line-height: 2.6rem; }
-    .container-main-plans .plan-image .plan-image-text {
-      padding-top: 4.2rem;
-      padding-bottom: 3.5rem; }
-      .container-main-plans .plan-image .plan-image-text p {
-        color: #000000;
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.7rem;
-        font-weight: 400;
-        line-height: 2.8rem; }
-        .container-main-plans .plan-image .plan-image-text p span {
-          color: #006085;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+  .container-main-plans .plan-image .plan-image-first {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    z-index: 9999;
+    -webkit-box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 2rem;
+    border-radius: 2rem;
+    background-color: #ffffff;
+    width: 60%;
+    padding: 2.2rem 4rem;
+    margin-right: 2rem; }
+    .container-main-plans .plan-image .plan-image-first img {
+      width: 100%; }
+      @media only screen and (max-width: 43.75em) {
+        .container-main-plans .plan-image .plan-image-first img {
+          width: 100%; } }
+    @media only screen and (max-width: 61.95em) {
+      .container-main-plans .plan-image .plan-image-first {
+        width: 100% !important; } }
+    .container-main-plans .plan-image .plan-image-first .plan-info {
+      padding-left: 5.7rem; }
+      .container-main-plans .plan-image .plan-image-first .plan-info .plan-info-txt {
+        padding-top: 2.4rem;
+        max-width: 24.2rem; }
+      .container-main-plans .plan-image .plan-image-first .plan-info .plan-info-line .plan-info-line-text {
+        width: 47%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between; }
+        .container-main-plans .plan-image .plan-image-first .plan-info .plan-info-line .plan-info-line-text p {
+          color: #000000;
           font-family: "Open Sans", sans-serif;
-          font-weight: 700; }
+          font-size: 1.2rem;
+          font-weight: 400;
+          line-height: 2.6rem; }
+  .container-main-plans .plan-image .plan-image-text {
+    padding-top: 4.2rem;
+    padding-bottom: 3.5rem; }
+    .container-main-plans .plan-image .plan-image-text p {
+      color: #000000;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      line-height: 2.8rem; }
+      .container-main-plans .plan-image .plan-image-text p span {
+        color: #006085;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700; }
 
 @media only screen and (max-width: 61.95em) {
   .plan-first-info {
@@ -1593,6 +1969,26 @@ ORDER: Base + typography > general layout + grid > page layout > components
     -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse; } }
 
+.plan-info-line-text p {
+  font-size: 1.5rem; }
+
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 .container-send-form {
   background-color: #eef5f6;
   background-size: cover;
@@ -1646,15 +2042,18 @@ ORDER: Base + typography > general layout + grid > page layout > components
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
         flex-direction: column; }
-        .container-send-form .send-form-main .send-form-list .name-input input {
-          width: 59.7rem;
-          height: 5rem; }
       .container-send-form .send-form-main .send-form-list .contact-input {
         display: -webkit-box;
         display: -webkit-flex;
         display: flex;
         padding-top: 1.8rem;
         padding-bottom: 2rem; }
+        @media only screen and (max-width: 20.1em) {
+          .container-send-form .send-form-main .send-form-list .contact-input {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column; } }
         .container-send-form .send-form-main .send-form-list .contact-input .tel-input {
           display: -webkit-box;
           display: -webkit-flex;
@@ -1664,9 +2063,17 @@ ORDER: Base + typography > general layout + grid > page layout > components
           -webkit-flex-direction: column;
           flex-direction: column;
           margin-right: 2rem; }
+          @media only screen and (max-width: 43.75em) {
+            .container-send-form .send-form-main .send-form-list .contact-input .tel-input {
+              margin: 0; } }
           .container-send-form .send-form-main .send-form-list .contact-input .tel-input input {
             width: 25.7rem;
             height: 5rem; }
+            @media only screen and (max-width: 43.75em) {
+              .container-send-form .send-form-main .send-form-list .contact-input .tel-input input {
+                width: 100% !important;
+                height: 5rem;
+                font-size: 1.5rem; } }
         .container-send-form .send-form-main .send-form-list .contact-input .mail-input {
           display: -webkit-box;
           display: -webkit-flex;
@@ -1739,3 +2146,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
           padding-left: 1rem;
           color: #006085;
           font-size: 1.4rem; }
+
+@media only screen and (max-width: 20.1em) {
+  input {
+    width: 100% !important; } }

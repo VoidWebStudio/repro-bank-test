@@ -1,3 +1,4 @@
+@import 'mixins';
 $font-family: 'Open Sans', sans-serif;
 .container-doc{
   background-image: url("../img/bg-doc.png");
@@ -16,6 +17,10 @@ $font-family: 'Open Sans', sans-serif;
       line-height: 3.6rem;
       max-width: 53%;
       text-align: center;
+      
+@include respond(phone) {
+  max-width: 100%;
+}
     }
     p{
       color: #000000;
@@ -27,6 +32,9 @@ $font-family: 'Open Sans', sans-serif;
       line-height: 3.2rem;
       padding-top: 2rem;
       padding-bottom: 2.6rem;
+      @include respond(phone) {
+        max-width: 100%;
+      }
     }
     .doc-info{
       display: flex;
@@ -35,6 +43,10 @@ $font-family: 'Open Sans', sans-serif;
       align-items: center;
       width: 100%;
       padding-bottom: 8.9rem;
+      @include respond(phone) {
+        padding: 0;
+        
+    }
       h1{
         color: #005f84;
         font-family: $font-family;

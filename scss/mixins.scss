@@ -2,6 +2,9 @@
     @if $breakpoint == phone {
         @media only screen and (max-width: 43.75em) { @content };  
     }
+    @if $breakpoint == litte-phone {
+        @media only screen and (max-width: 20.1em) { @content };  
+    }
     @if $breakpoint == tab-port {
         @media only screen and (max-width: 60.25em) { @content };   
     }

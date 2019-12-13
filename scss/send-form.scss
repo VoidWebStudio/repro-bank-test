@@ -1,3 +1,5 @@
+@import 'mixins';
+
 $font-family2: "Segoe UI Regular",sans-serif;
 $font-family: 'Open Sans', sans-serif;
 .container-send-form{
@@ -36,22 +38,31 @@ $font-family: 'Open Sans', sans-serif;
       .name-input{
         display: flex;
         flex-direction: column;
-        input{
-          width: 59.7rem;
-          height: 5rem;
-        }
+       
       }
       .contact-input{
         display: flex;
         padding-top: 1.8rem;
         padding-bottom: 2rem;
+        @include respond(litte-phone) {
+          flex-direction: column;
+      }
+
         .tel-input{
           display: flex;
           flex-direction: column;
           margin-right: 2rem;
+          @include respond(phone) {
+            margin: 0;
+        }
           input{
             width:25.7rem;
             height: 5rem;
+            @include respond(phone) {
+              width:100% !important;           
+              height: 5rem;
+              font-size: 1.5rem;
+          }
           }
         }
         .mail-input{
@@ -61,6 +72,8 @@ $font-family: 'Open Sans', sans-serif;
             width: 32rem;
             height: 5rem;
           }
+          
+
         }
       }
       .area-input{
@@ -76,9 +89,7 @@ $font-family: 'Open Sans', sans-serif;
     }
     .check-box-input{
       padding-top: 2.1rem;
-      input{
-
-      }
+  
       label{
         color: #48423b;
         font-family: $font-family2;
@@ -119,4 +130,9 @@ $font-family: 'Open Sans', sans-serif;
       }
     }
   }
+}
+input{
+  @include respond(litte-phone) {
+    width: 100% !important;
+}
 }

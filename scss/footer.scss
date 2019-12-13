@@ -1,3 +1,4 @@
+@import 'mixins';
 $font-family: 'Open Sans', sans-serif;
 
 .container-footer{
@@ -12,12 +13,20 @@ $font-family: 'Open Sans', sans-serif;
     color: #9bb4c3;
     padding-top: 4rem;
     padding-bottom: 4rem;
+
+    @include respond(phone){ 
+      flex-direction: column;  
+
+  }
     span{
       color: #fff;
       font-family: $font-family;
       font-size: 1.4rem;
       font-weight: 700;
       line-height: 3.2rem;
+      @include respond(litte-phone) {
+      font-size: 1.2rem;
+    }
       
     }
     .footer-contact-info{
@@ -169,8 +178,13 @@ $font-family: 'Open Sans', sans-serif;
       display: flex;
       justify-content: space-around;
       align-items: center;
+      @include respond(phone) {
+        float: left;
+    }
+
       .arrow-top-link{
         padding-bottom: 6rem;
+        float: right;
       }
     }
     .footer-last_date{

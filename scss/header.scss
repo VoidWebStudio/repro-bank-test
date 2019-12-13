@@ -89,4 +89,13 @@ $font-family: 'Open Sans', sans-serif;
   flex-direction: row;
   width: 100%;
   justify-content: space-around;
+  margin-top: 3rem;
+
+}
+
+.header-logo__logo2{
+  display: none;
+  @include respond(tab-extra) {
+    display: block;
+}
 }

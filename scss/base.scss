@@ -5,12 +5,14 @@ html {
     scroll-behavior: smooth;
     font-size: 62.5%;
 
+
     @include respond(phone) {
-        font-size: 40%;
+        font-size: 38%;
+
     }
 
     @include respond(tab-port) { 
-        font-size: 50%; 
+        font-size: 45%; 
     }
 
     @include respond(tab-land) {
@@ -24,6 +26,22 @@ html {
 
     @include respond(big-desktop) {
         font-size: 75%; 
+    }
+
+    p{
+        font-size: 1.5rem;
+    }
+
+    @include respond(little-phone) {
+      h1{
+          font-size: 1.5rem !important;
+          text-align: left;
+
+      }
+
+   
+
+      
     }
 
 

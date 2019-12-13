@@ -1,6 +1,10 @@
 @import 'mixins';
 $font-family: 'Open Sans', sans-serif;
 .container-factors{
+  @include respond(phone) {
+    display: none;
+   }
+   
   display: flex;
   background-image: url("../img/bg-factors.png");
   background-size: 100% 100%;
@@ -23,6 +27,8 @@ $font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         line-height: 3.6rem;
         text-align: center;
+
+
       }
 
     }
@@ -31,7 +37,6 @@ $font-family: 'Open Sans', sans-serif;
       justify-content: center;
       align-items: center;
       @include respond(phone) {
-        
        display: none;
       }
       
@@ -54,6 +59,11 @@ $font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         line-height: 3.2rem;
         text-align: center;
+                
+    @include respond(litte-phone) {
+      text-align: left !important;
+      
+        }
       }
       p{
         color: #000000;
@@ -91,13 +101,4 @@ $font-family: 'Open Sans', sans-serif;
   }
 }
 
-.box{
-  display: flex;
-  flex-direction: column;
-  background: red;
-  
-}
-.icons{
-  display: flex;
-  width: 100%;
-}
+
