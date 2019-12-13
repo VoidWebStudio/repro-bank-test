@@ -15,3 +15,7 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
+
+$(document).ready(function($){
+    $('#phone').mask('+7 999 999 99 99'), {placeholder:'+X XXX XXX XX XX'};
+})
