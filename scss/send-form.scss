@@ -79,8 +79,7 @@ $font-family: 'Open Sans', sans-serif;
             
             height: 5rem;
             @include respond(phone) {
-          
-              width: 34rem; 
+              width: 100%; 
           }
  
 
