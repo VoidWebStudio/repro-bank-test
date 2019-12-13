@@ -6,6 +6,10 @@ $font-family: 'Open Sans', sans-serif;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  @include respond(phone) {
+   background-image: none;
+
+  }
 
   @include respond(tab-port) {
     background-size: auto;
@@ -19,6 +23,9 @@ $font-family: 'Open Sans', sans-serif;
   .container-main-bank{
     .bank-first{
       padding-top: 216px;
+      @include respond(phone) {
+          padding-top: 3rem;
+        }
       h1{
         color: #005c80;
         font-family: $font-family2;
@@ -30,10 +37,7 @@ $font-family: 'Open Sans', sans-serif;
       ul{
         padding-left: 2rem;
         width: 40%;
-        @include respond(tab-port) {
-        margin-left: 3rem;
-
-        }
+   
         li{
           list-style-image: url("../img/marker.png");
           color: #000000;

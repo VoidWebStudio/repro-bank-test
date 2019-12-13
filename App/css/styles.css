@@ -171,6 +171,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
+  @media only screen and (max-width: 43.75em) {
+    .container-bank {
+      background-image: none; } }
   @media only screen and (max-width: 60.25em) {
     .container-bank {
       background-size: auto;
@@ -180,6 +183,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
       background-position: top; } }
   .container-bank .container-main-bank .bank-first {
     padding-top: 216px; }
+    @media only screen and (max-width: 43.75em) {
+      .container-bank .container-main-bank .bank-first {
+        padding-top: 3rem; } }
     .container-bank .container-main-bank .bank-first h1 {
       color: #005c80;
       font-family: "Segoe UI Regular", sans-serif;
@@ -190,9 +196,6 @@ ORDER: Base + typography > general layout + grid > page layout > components
     .container-bank .container-main-bank .bank-first ul {
       padding-left: 2rem;
       width: 40%; }
-      @media only screen and (max-width: 60.25em) {
-        .container-bank .container-main-bank .bank-first ul {
-          margin-left: 3rem; } }
       .container-bank .container-main-bank .bank-first ul li {
         list-style-image: url("../img/marker.png");
         color: #000000;
