@@ -6,6 +6,13 @@
   box-sizing: border-box;
 
 
+  @include respond(tab-port) {
+    
+  
+    .container-fluid{
+      padding: 0 !important;
+    }
+  }
 @include respond(phone) {
   
   .col-lg-12{

@@ -1036,7 +1036,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
       font-family: "Open Sans", sans-serif;
       font-size: 1.4rem;
       font-weight: 700;
-      line-height: 3.2rem; }
+      line-height: 3.2rem;
+      text-align: left; }
       @media only screen and (max-width: 20.1em) {
         .container-footer .footer-last span {
           font-size: 1.2rem; } }
@@ -1258,6 +1259,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
       -webkit-box-align: center;
       -webkit-align-items: center;
       align-items: center; }
+      @media only screen and (max-width: 60.25em) {
+        .container-footer .footer-last .footer-last__tree {
+          display: none; } }
       @media only screen and (max-width: 43.75em) {
         .container-footer .footer-last .footer-last__tree {
           float: left;
@@ -1493,6 +1497,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
   margin: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
+  @media only screen and (max-width: 60.25em) {
+    * .container-fluid {
+      padding: 0 !important; } }
   @media only screen and (max-width: 43.75em) {
     * .col-lg-12 {
       padding: 0 !important; }
