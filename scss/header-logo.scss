@@ -6,18 +6,14 @@
   box-sizing: border-box;
 
 
-  @include respond(tab-port) {
-    
-  
-    .container-fluid{
-      padding: 0 !important;
-    }
-  }
+
 @include respond(phone) {
   
   .col-lg-12{
     padding: 0 !important;
 }
+
+
 h1{
   text-align: left !important;
   font-size: 2.5rem !important;

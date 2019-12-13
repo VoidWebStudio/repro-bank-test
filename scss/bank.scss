@@ -6,6 +6,7 @@ $font-family: 'Open Sans', sans-serif;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   @include respond(tab-port) {
     background-size: auto;
     background-position: center;
@@ -29,6 +30,10 @@ $font-family: 'Open Sans', sans-serif;
       ul{
         padding-left: 2rem;
         width: 40%;
+        @include respond(tab-port) {
+        margin-left: 3rem;
+
+        }
         li{
           list-style-image: url("../img/marker.png");
           color: #000000;
@@ -37,6 +42,9 @@ $font-family: 'Open Sans', sans-serif;
           font-weight: 400;
           line-height: 3.2rem;
           padding-bottom: 3.4rem;
+          @include respond(phone) {
+           font-size: 1.8rem;
+            }
 
         }
       }
