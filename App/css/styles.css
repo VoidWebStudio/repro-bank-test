@@ -2057,7 +2057,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
       border-radius: 4px;
       border: 1px solid #dddddd;
       background-color: #ffffff;
-      padding: 1.9rem 0 1.5rem 1.2rem; }
+      padding: 1.9rem 0 1.5rem 1.2rem;
+      font-size: 15px; }
     .container-send-form .send-form-main .send-form-list {
       display: -webkit-box;
       display: -webkit-flex;
@@ -2130,7 +2131,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
           -webkit-border-radius: .4rem;
           border-radius: .4rem;
           border: 1px solid #dddddd;
-          background-color: #ffffff; }
+          background-color: #ffffff;
+          font-size: 14px; }
     .container-send-form .send-form-main .check-box-input {
       padding-top: 2.1rem; }
       .container-send-form .send-form-main .check-box-input label {

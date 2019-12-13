@@ -31,6 +31,9 @@ $font-family: 'Open Sans', sans-serif;
       border: 1px solid #dddddd;
       background-color: #ffffff;
       padding: 1.9rem 0 1.5rem 1.2rem;
+      font-size: 15px;
+      
+
     }
     .send-form-list{
       display: flex;
@@ -71,6 +74,7 @@ $font-family: 'Open Sans', sans-serif;
           input{
             width: 32rem;
             height: 5rem;
+    
           }
           
 
@@ -84,6 +88,8 @@ $font-family: 'Open Sans', sans-serif;
           border-radius: .4rem;
           border: 1px solid #dddddd;
           background-color: #ffffff;
+          font-size: 14px;
+
         }
       }
     }
