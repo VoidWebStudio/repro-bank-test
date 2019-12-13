@@ -2087,6 +2087,12 @@ ORDER: Base + typography > general layout + grid > page layout > components
             -webkit-box-direction: normal;
             -webkit-flex-direction: column;
             flex-direction: column; } }
+        @media only screen and (max-width: 43.75em) {
+          .container-send-form .send-form-main .send-form-list .contact-input {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: column;
+            flex-direction: column; } }
         .container-send-form .send-form-main .send-form-list .contact-input .tel-input {
           display: -webkit-box;
           display: -webkit-flex;
@@ -2116,8 +2122,10 @@ ORDER: Base + typography > general layout + grid > page layout > components
           -webkit-flex-direction: column;
           flex-direction: column; }
           .container-send-form .send-form-main .send-form-list .contact-input .mail-input input {
-            width: 32rem;
             height: 5rem; }
+            @media only screen and (max-width: 43.75em) {
+              .container-send-form .send-form-main .send-form-list .contact-input .mail-input input {
+                width: 34rem; } }
       .container-send-form .send-form-main .send-form-list .area-input {
         display: -webkit-box;
         display: -webkit-flex;
@@ -2132,7 +2140,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
           border-radius: .4rem;
           border: 1px solid #dddddd;
           background-color: #ffffff;
-          font-size: 14px; }
+          font-size: 14px;
+          width: 90%; }
     .container-send-form .send-form-main .check-box-input {
       padding-top: 2.1rem; }
       .container-send-form .send-form-main .check-box-input label {
@@ -2184,3 +2193,25 @@ ORDER: Base + typography > general layout + grid > page layout > components
 @media only screen and (max-width: 20.1em) {
   input {
     width: 100% !important; } }
+
+.custom-control-label::before {
+  position: absolute;
+  top: .25rem;
+  left: -2.5rem !important;
+  display: block;
+  width: 1.8rem !important;
+  height: 1.8rem !important;
+  pointer-events: none;
+  content: "";
+  background-color: #fff;
+  border: #adb5bd solid 1px; }
+
+.custom-control-label::after {
+  position: absolute;
+  top: .25rem;
+  left: -2.5rem !important;
+  display: block;
+  width: 1.8rem !important;
+  height: 1.8rem !important;
+  content: "";
+  background: no-repeat 50%/50% 50%; }
